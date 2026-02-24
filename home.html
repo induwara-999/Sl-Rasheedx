@@ -73,7 +73,6 @@
             animation: fadeInUp 0.8s ease backwards;
         }
 
-        /* Delaying animations for each card to create a sequence effect */
         .card:nth-child(1) { animation-delay: 0.1s; }
         .card:nth-child(2) { animation-delay: 0.2s; }
         .card:nth-child(3) { animation-delay: 0.3s; }
@@ -156,6 +155,33 @@
             box-shadow: 0 0 30px var(--neon-red), inset 0 0 20px var(--neon-red);
         }
 
+        /* Developer Credit Section */
+        .dev-credit {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .dev-credit p {
+            margin: 5px 0;
+            color: #888;
+        }
+
+        .dev-name {
+            color: var(--neon-red);
+            font-weight: bold;
+            text-shadow: 0 0 5px var(--neon-red);
+        }
+
+        .dev-whatsapp {
+            color: #25D366; /* WhatsApp Green */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(50px); }
@@ -203,22 +229,17 @@
             <div class="card neon-border" onclick="buyPackage('500+ Reactions', '500')">
                 <p>3️⃣ පැකේජය</p>
                 <h3>500+ Reactions</h3>
-                <p class="price">රු. 500/-</p>
+                <p class="price">රු. 450/-</p>
             </div>
             <div class="card neon-border" onclick="buyPackage('1000+ Reactions', '1000')">
                 <p>4️⃣ පැකේජය</p>
                 <h3>1000+ Reactions</h3>
-                <p class="price">රු. 1000/-</p>
-            </div>
-            <div class="card neon-border" onclick="buyPackage('1500+ Reactions', '1500')">
-                <p>5️⃣ පැකේජය</p>
-                <h3>1500+ Reactions</h3>
-                <p class="price">රු. 1500/-</p>
+                <p class="price">රු. 850/-</p>
             </div>
             <div class="card neon-border" onclick="buyPackage('2000+ Reactions', '2000')">
-                <p>6️⃣ පැකේජය</p>
+                <p>5️⃣ පැකේජය</p>
                 <h3>2000+ Reactions</h3>
-                <p class="price">රු. 2000/-</p>
+                <p class="price">රු. 1600/-</p>
             </div>
         </div>
 
@@ -269,16 +290,17 @@
             <h3 class="neon-text" style="margin-top: 40px;">ප්‍රමාද නොවී අදම සම්බන්ධ වන්න! 🤝</h3>
         </div>
 
+        <div class="dev-credit">
+            <p>Design By <span class="dev-name">INDUWARA</span></p>
+            <p>Whatsapp: <a href="https://wa.me/94753603639" class="dev-whatsapp" target="_blank">+94753603639</a></p>
+        </div>
+
     </div>
 
     <script>
         function buyPackage(packageName, price) {
             const phone = "94783821910";
-            
-            // Format the message that will be sent to WhatsApp
             const message = `ආයුබෝවන් SL RASHEEDX BUS KINGDOM! 👋%0A%0Aමම ඔබගේ වෙබ් අඩවියෙන් පැමිණියේ. මට පහත පැකේජය ලබාගැනීමට අවශ්‍යයි:%0A%0A📦 *පැකේජය:* ${packageName}%0A💰 *මිල:* රු. ${price}/-%0A%0Aකරුණාකර මට විස්තර ලබා දෙන්න.`;
-            
-            // Open WhatsApp link
             const waLink = `https://wa.me/${phone}?text=${message}`;
             window.open(waLink, '_blank');
         }
